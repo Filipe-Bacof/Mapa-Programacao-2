@@ -17,7 +17,6 @@ public class Tela1 extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        // Criando e adicionando Labels e TextFields
         panel.add(new JLabel("Nome:"));
         nomeField = new JTextField();
         panel.add(nomeField);

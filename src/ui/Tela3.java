@@ -20,7 +20,6 @@ public class Tela3 extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        // Exibindo os dados do responsável e da criança, campo para minutos e botão para calcular
         panel.add(new JLabel("Nome do Responsável:"));
         responsavelField = new JTextField(responsavel.getNome());
         responsavelField.setEditable(false);

@@ -17,7 +17,6 @@ public class Tela2 extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        // Exibindo o nome do responsável e campo de entrada para dados da criança
         panel.add(new JLabel("Nome do Responsável:"));
         responsavelField = new JTextField(responsavel.getNome());
         responsavelField.setEditable(false);
