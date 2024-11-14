@@ -7,23 +7,43 @@ import java.awt.event.ActionListener;
 
 public class Tela1 extends JFrame {
     private JTextField nomeField, cpfField, telefoneField, emailField, enderecoField, idadeField;
+    private JButton avancarButton;
 
     public Tela1() {
-        setTitle("Cadastro do Responsável");
-        setSize(300, 300);
+        setTitle("Cadastro do Responsável - Etapa 1 de 3");
+        setSize(300, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        nomeField = new JTextField("Nome");
-        cpfField = new JTextField("CPF");
-        telefoneField = new JTextField("Telefone");
-        emailField = new JTextField("Email");
-        enderecoField = new JTextField("Endereço");
-        idadeField = new JTextField("Idade");
+        // Criando e adicionando Labels e TextFields
+        panel.add(new JLabel("Nome:"));
+        nomeField = new JTextField();
+        panel.add(nomeField);
 
-        JButton nextButton = new JButton("Próximo");
-        nextButton.addActionListener(new ActionListener() {
+        panel.add(new JLabel("CPF:"));
+        cpfField = new JTextField();
+        panel.add(cpfField);
+
+        panel.add(new JLabel("Telefone:"));
+        telefoneField = new JTextField();
+        panel.add(telefoneField);
+
+        panel.add(new JLabel("Email:"));
+        emailField = new JTextField();
+        panel.add(emailField);
+
+        panel.add(new JLabel("Endereço:"));
+        enderecoField = new JTextField();
+        panel.add(enderecoField);
+
+        panel.add(new JLabel("Idade:"));
+        idadeField = new JTextField();
+        panel.add(idadeField);
+
+        avancarButton = new JButton("Avançar");
+        avancarButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 try {
                     String nome = nomeField.getText();
@@ -43,14 +63,7 @@ public class Tela1 extends JFrame {
             }
         });
 
-        panel.add(nomeField);
-        panel.add(cpfField);
-        panel.add(telefoneField);
-        panel.add(emailField);
-        panel.add(enderecoField);
-        panel.add(idadeField);
-        panel.add(nextButton);
-
+        panel.add(avancarButton);
         add(panel);
     }
 

@@ -1,5 +1,8 @@
 package dominio;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Estadia {
     private Responsavel responsavel;
     private Crianca crianca;
@@ -22,7 +25,9 @@ public class Estadia {
         } else if (minutosUtilizados > 20) {
             valorTotal *= 0.95;
         }
-        return valorTotal;
+
+        BigDecimal valorFormatado = new BigDecimal(valorTotal).setScale(2, RoundingMode.HALF_UP);
+        return valorFormatado.doubleValue();
     }
 
     public Responsavel getResponsavel() { return responsavel; }
