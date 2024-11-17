@@ -39,7 +39,7 @@ public class Tela3 extends JFrame {
             try {
                 int minutos = Integer.parseInt(minutosField.getText());
                 Estadia estadia = new Estadia(responsavel, crianca, minutos);
-                double valor = estadia.calcularValor();
+                String valor = estadia.calcularValor();
 
                 JOptionPane.showMessageDialog(this, "Resumo:\n" +
                         "Nome Responsável: " + responsavel.getNome() + "\n" +

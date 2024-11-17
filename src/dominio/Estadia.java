@@ -1,7 +1,6 @@
 package dominio;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class Estadia {
     private Responsavel responsavel;
@@ -14,7 +13,7 @@ public class Estadia {
         this.minutosUtilizados = minutosUtilizados;
     }
 
-    public double calcularValor() {
+    public String calcularValor() {
         double valorPorMinuto = 1.5;
         double valorTotal = minutosUtilizados * valorPorMinuto;
 
@@ -26,8 +25,8 @@ public class Estadia {
             valorTotal *= 0.95;
         }
 
-        BigDecimal valorFormatado = new BigDecimal(valorTotal).setScale(2, RoundingMode.HALF_UP);
-        return valorFormatado.doubleValue();
+        DecimalFormat formatoMonetario = new DecimalFormat("0.00");
+        return formatoMonetario.format(valorTotal);
     }
 
     public Responsavel getResponsavel() { return responsavel; }
